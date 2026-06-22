@@ -1,1 +1,671 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yase Restaurant | Premium Menu Presentation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandBrownDark: '#2B140E', /* Main background brown inspired by image_11.png */
+                        brandBrownPlain: '#3D1D15',
+                        brandBrownLight: '#A67C52',
+                        brandOliveDark: '#25281A',  /* Accent olive green inspired by image_10.png */
+                        brandOliveLight: '#4A5034',
+                        brandGold: '#D4AF37'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Utilizing the provided textured files for continuous structural depth */
+        .bg-texture-brown {
+            background-image: linear-gradient(rgba(43, 20, 14, 0.92), rgba(43, 20, 14, 0.95)), url('image_11.png');
+            background-size: cover;
+            background-repeat: repeat;
+        }
+        .bg-texture-olive {
+            background-image: linear-gradient(rgba(37, 40, 26, 0.9), rgba(37, 40, 26, 0.95)), url('image_10.png');
+            background-size: cover;
+            background-repeat: repeat;
+        }
+        .menu-tab-btn.active {
+            background-color: #4A5034;
+            color: white;
+            border-color: #4A5034;
+        }
+    </style>
+</head>
+<body class="bg-texture-brown text-gray-200 font-sans antialiased">
 
+    <header class="fixed top-0 left-0 right-0 z-50 bg-brandBrownDark/95 backdrop-blur-md border-b border-brandOliveLight/20 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#home" class="text-3xl font-extrabold tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-brandBrownLight via-brandGold to-brandOliveLight">
+                YASE
+            </a>
+            <nav class="hidden md:flex space-x-8 text-sm font-medium tracking-wider uppercase">
+                <a href="#home" class="hover:text-brandBrownLight transition duration-300">Home</a>
+                <a href="#about" class="hover:text-brandBrownLight transition duration-300">About Us</a>
+                <a href="#menu" class="hover:text-brandBrownLight transition duration-300">Our Menu</a>
+                <a href="#contact" class="hover:text-brandBrownLight transition duration-300">Contact</a>
+            </nav>
+            <div class="md:hidden">
+                <button id="mobile-menu-btn" class="p-2 text-gray-400 hover:text-white focus:outline-none">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden bg-brandBrownDark border-b border-brandOliveLight/20 px-4 pt-2 pb-4 space-y-2 md:hidden">
+            <a href="#home" class="mobile-link block py-2 text-gray-300 hover:text-brandBrownLight">Home</a>
+            <a href="#about" class="mobile-link block py-2 text-gray-300 hover:text-brandBrownLight">About Us</a>
+            <a href="#menu" class="mobile-link block py-2 text-gray-300 hover:text-brandBrownLight">Our Menu</a>
+            <a href="#contact" class="mobile-link block py-2 text-gray-300 hover:text-brandBrownLight">Contact</a>
+        </div>
+    </header>
+
+    <section id="home" class="relative h-screen flex items-center justify-center bg-cover bg-center pt-20" style="background-image: linear-gradient(rgba(43, 20, 14, 0.75), rgba(43, 20, 14, 0.9)), url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1920&q=80');">
+        <div class="text-center px-4 max-w-3xl">
+            <span class="text-brandBrownLight uppercase tracking-widest font-semibold text-sm mb-3 block">Welcome to Yase</span>
+            <h1 class="text-5xl md:text-7xl font-bold tracking-tight text-white mb-6">Culinary Excellence</h1>
+            <p class="text-lg md:text-xl text-gray-300 mb-8 max-w-xl mx-auto">Discover our newly updated digital signature menu presentation featuring authentic dishes, modern premium drinks, and traditional specialties.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#menu" class="bg-brandOliveLight hover:bg-brandOliveLight/80 text-white px-8 py-3 rounded-full font-semibold tracking-wide transition duration-300 text-center shadow-lg">Explore Full Menu</a>
+                <a href="#contact" class="border border-brandBrownLight text-brandBrownLight hover:bg-brandBrownLight hover:text-white px-8 py-3 rounded-full font-semibold tracking-wide transition duration-300 text-center">Contact & Location</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-24 bg-texture-olive border-b border-brandBrownLight/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <span class="text-brandGold uppercase tracking-wider font-semibold text-sm block">Our Story</span>
+                    <h2 class="text-4xl font-bold text-white">A Perfect Fusion of Flavor & Culture</h2>
+                    <p class="text-gray-300 leading-relaxed">
+                        At Yase Restaurant, we pride ourselves on delivering standard-defining premium experiences. From perfectly cooked traditional classics to handcrafted drinks, signature master pizzas, and custom sweet breakfasts, our menu reflects absolute dedication to culinary balance.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6 pt-4">
+                        <div class="p-4 bg-brandOliveDark/80 rounded-xl border-l-4 border-brandBrownLight">
+                            <h4 class="font-bold text-white text-lg">Fresh Ingredients</h4>
+                            <p class="text-xs text-gray-400 mt-1">Sourced fresh daily to ensure every plate meets elite standards.</p>
+                        </div>
+                        <div class="p-4 bg-brandOliveDark/80 rounded-xl border-l-4 border-brandGold">
+                            <h4 class="font-bold text-white text-lg">Elite Ambiance</h4>
+                            <p class="text-xs text-gray-400 mt-1">A perfect visual showcase designed for modern culinary enthusiasts.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative grid grid-cols-2 gap-4">
+                    <img class="w-full h-64 object-cover rounded-2xl shadow-xl border border-brandBrownLight/20" src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&q=80" alt="Gourmet Dish Presentation">
+                    <img class="w-full h-64 object-cover rounded-2xl shadow-xl border border-brandOliveLight/20 mt-8" src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=600&q=80" alt="Healthy Plate Layout">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="menu" class="py-24 bg-texture-brown">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-4xl font-bold text-white mb-4">Discover Our Menu</h2>
+                <div class="w-24 h-1 bg-brandOliveLight mx-auto mb-4"></div>
+                <p class="text-gray-400 text-sm">Select a category below to explore our exact recipes, items, and pricing lists.</p>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-2 mb-12">
+                <button onclick="switchTab('breakfast')" class="menu-tab-btn active px-4 py-2 text-xs rounded-full border border-brandOliveLight/20 bg-brandBrownPlain text-gray-300 hover:text-white transition duration-300 font-medium uppercase tracking-wider">Breakfast</button>
+                <button onclick="switchTab('main')" class="menu-tab-btn px-4 py-2 text-xs rounded-full border border-brandOliveLight/20 bg-brandBrownPlain text-gray-300 hover:text-white transition duration-300 font-medium uppercase tracking-wider">Main Course</button>
+                <button onclick="switchTab('pizza')" class="menu-tab-btn px-4 py-2 text-xs rounded-full border border-brandOliveLight/20 bg-brandBrownPlain text-gray-300 hover:text-white transition duration-300 font-medium uppercase tracking-wider">Pizza</button>
+                <button onclick="switchTab('burgers')" class="menu-tab-btn px-4 py-2 text-xs rounded-full border border-brandOliveLight/20 bg-brandBrownPlain text-gray-300 hover:text-white transition duration-300 font-medium uppercase tracking-wider">Burgers & Wraps</button>
+                <button onclick="switchTab('pasta')" class="menu-tab-btn px-4 py-2 text-xs rounded-full border border-brandOliveLight/20 bg-brandBrownPlain text-gray-300 hover:text-white transition duration-300 font-medium uppercase tracking-wider">Pasta & Salads</button>
+                <button onclick="switchTab('tea')" class="menu-tab-btn px-4 py-2 text-xs rounded-full border border-brandOliveLight/20 bg-brandBrownPlain text-gray-300 hover:text-white transition duration-300 font-medium uppercase tracking-wider">Tea & Cakes</button>
+                <button onclick="switchTab('coffee')" class="menu-tab-btn px-4 py-2 text-xs rounded-full border border-brandOliveLight/20 bg-brandBrownPlain text-gray-300 hover:text-white transition duration-300 font-medium uppercase tracking-wider">Coffee & Drinks</button>
+                <button onclick="switchTab('matcha')" class="menu-tab-btn px-4 py-2 text-xs rounded-full border border-brandOliveLight/20 bg-brandBrownPlain text-gray-300 hover:text-white transition duration-300 font-medium uppercase tracking-wider">Matcha, Smoothies & Shakes</button>
+                <button onclick="switchTab('sides')" class="menu-tab-btn px-4 py-2 text-xs rounded-full border border-brandOliveLight/20 bg-brandBrownPlain text-gray-300 hover:text-white transition duration-300 font-medium uppercase tracking-wider">Sides & Soups</button>
+            </div>
+
+            <div id="menu-container">
+                
+                <div id="panel-breakfast" class="menu-panel grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <div class="space-y-4 lg:col-span-1">
+                        <h3 class="text-md font-bold text-brandBrownLight border-b border-brandBrownLight/20 pb-2 mb-4 uppercase tracking-wider">Standard Breakfast</h3>
+                        <div class="bg-brandBrownPlain p-4 rounded-xl flex justify-between items-start border border-brandBrownDark">
+                            <div>
+                                <h4 class="text-white font-semibold">LIVER</h4>
+                                <p class="text-xs text-gray-400 mt-1">Liver, onions, mixed peppers and garlic served with bread or laxoox.</p>
+                            </div>
+                            <span class="text-brandGold font-bold">$4.5</span>
+                        </div>
+                        <div class="bg-brandBrownPlain p-4 rounded-xl flex justify-between items-start border border-brandBrownDark">
+                            <div>
+                                <h4 class="text-white font-semibold">SPANISH OMELETTE</h4>
+                                <p class="text-xs text-gray-400 mt-1">2 eggs, toasted bread.</p>
+                            </div>
+                            <span class="text-brandGold font-bold">$3.5</span>
+                        </div>
+                        <div class="bg-brandBrownPlain p-4 rounded-xl flex justify-between items-start border border-brandBrownDark">
+                            <div>
+                                <h4 class="text-white font-semibold">CHEESE OMELET</h4>
+                                <p class="text-xs text-gray-400 mt-1">Fluffy eggs folded with melted cheese.</p>
+                            </div>
+                            <span class="text-brandGold font-bold">$4</span>
+                        </div>
+                        <div class="bg-brandBrownPlain p-4 rounded-xl flex justify-between items-start border border-brandBrownDark">
+                            <div>
+                                <h4 class="text-white font-semibold">OATMEAL BOWL</h4>
+                                <p class="text-xs text-gray-400 mt-1">White oats, yoghurt, fruits and honey.</p>
+                            </div>
+                            <span class="text-brandGold font-bold">$4</span>
+                        </div>
+                        <div class="bg-brandBrownPlain p-4 rounded-xl flex justify-between items-start border border-brandBrownDark">
+                            <div>
+                                <h4 class="text-white font-semibold">SUQAAR</h4>
+                                <p class="text-xs text-gray-400 mt-1">Tender beef cubes cooked with Somali spices, served with laxoox, bread.</p>
+                            </div>
+                            <span class="text-brandGold font-bold">$4</span>
+                        </div>
+                    </div>
+                    <div class="space-y-4 lg:col-span-1">
+                        <h3 class="text-md font-bold text-brandOliveLight border-b border-brandOliveLight/20 pb-2 mb-4 uppercase tracking-wider">Sweet Breakfast</h3>
+                        <div class="bg-brandBrownPlain p-4 rounded-xl flex justify-between items-start border border-brandBrownDark">
+                            <div>
+                                <h4 class="text-white font-semibold">PANCAKES STACK</h4>
+                                <p class="text-xs text-gray-400 mt-1">(With butter or honey, banana and strawberry)</p>
+                            </div>
+                            <span class="text-brandGold font-bold">$4</span>
+                        </div>
+                        <div class="bg-brandBrownPlain p-4 rounded-xl flex justify-between items-start border border-brandBrownDark">
+                            <div>
+                                <h4 class="text-white font-semibold">WAFFLES</h4>
+                                <p class="text-xs text-gray-400 mt-1">(Served with fruit, honey, or whipped cream)</p>
+                            </div>
+                            <span class="text-brandGold font-bold">$4.5</span>
+                        </div>
+                        <div class="bg-brandBrownPlain p-4 rounded-xl flex justify-between items-start border border-brandBrownDark">
+                            <div>
+                                <h4 class="text-white font-semibold">MALAWAX WITH HONEY & BANANA</h4>
+                                <p class="text-xs text-gray-400 mt-1">(Modern twist — sweet and filling)</p>
+                            </div>
+                            <span class="text-brandGold font-bold">$3.5</span>
+                        </div>
+                        <div class="bg-brandBrownPlain p-4 rounded-xl flex justify-between items-start border border-brandBrownDark">
+                            <div>
+                                <h4 class="text-white font-semibold">FRENCH TOAST</h4>
+                                <p class="text-xs text-gray-400 mt-1">(Topped with cinnamon sugar and honey)</p>
+                            </div>
+                            <span class="text-brandGold font-bold">$4</span>
+                        </div>
+                        <div class="bg-brandBrownPlain p-4 rounded-xl flex justify-between items-start border border-brandBrownDark">
+                            <div>
+                                <h4 class="text-white font-semibold">CAMBAABUR</h4>
+                                <p class="text-xs text-gray-400 mt-1">Traditional Somali festive pancake.</p>
+                            </div>
+                            <span class="text-brandGold font-bold">$4</span>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-1 grid grid-cols-1 gap-4 self-start pt-10">
+                        <img class="w-full h-48 object-cover rounded-xl shadow border border-brandOliveLight/20" src="https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=500&q=80" alt="Premium Breakfast Showcase">
+                        <img class="w-full h-48 object-cover rounded-xl shadow border border-brandBrownLight/20" src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&w=500&q=80" alt="Sweet Pancakes Stack">
+                    </div>
+                </div>
+
+                <div id="panel-main" class="menu-panel hidden space-y-6">
+                    <div class="text-center text-xs text-brandGold tracking-wider uppercase bg-brandBrownPlain p-3 rounded-xl border border-brandOliveLight/10">
+                        * All our main courses are served with a choice of rice, chips, or tortilla wrap. *
+                    </div>
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                        <div class="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="bg-brandBrownPlain p-4 rounded-xl flex justify-between items-center border border-brandBrownDark">
+                                <div>
+                                    <h4 class="text-white font-semibold">SWEET & SOUR FISH</h4>
+                                    <p class="text-xs text-gray-400 mt-1">Crispy fish fillet tossed with sautéed onions, tomatoes, smoky paprika, and a kick of black pepper in a tangy-sweet sauce.</p>
+                                </div>
+                                <span class="text-brandGold font-bold ml-4">$9</span>
+                            </div>
+                            <div class="bg-brandBrownPlain p-4 rounded-xl flex justify-between items-center border border-brandBrownDark">
+                                <div>
+                                    <h4 class="text-white font-semibold">BUTTER CHICKEN</h4>
+                                    <p class="text-xs text-gray-400 mt-1">Tender chicken in a creamy tomato-butter sauce. Served with basmati rice or naan and a side salad.</p>
+                                </div>
+                                <span class="text-brandGold font-bold ml-4">$7.5</span>
+                            </div>
+                            <div class="bg-brandBrownPlain p-4 rounded-xl flex justify-between items-center border border-brandBrownDark">
+                                <div>
+                                    <h4 class="text-white font-semibold">GRILLED CHICKEN BREAST</h4>
+                                    <p class="text-xs text-gray-400 mt-1">Tender, herb-marinated chicken breast grilled to perfection. Served with steamed vegetables, rice, or muuf.</p>
+                                </div>
+                                <span class="text-brandGold font-bold ml-4">$8</span>
+                            </div>
+                            <div class="bg-brandBrownPlain p-4 rounded-xl flex justify-between items-center border border-brandBrownDark">
+                                <div>
+                                    <h4 class="text-white font-semibold">GRILLED FISH</h4>
+                                    <p class="text-xs text-gray-400 mt-1">Tender fish fillet marinated with lemon, garlic, and herbs. Served with rice or fresh salad.</p>
+                                </div>
+                                <span class="text-brandGold font-bold ml-4">$8</span>
+                            </div>
+                            <div class="bg-brandBrownPlain p-4 rounded-xl flex justify-between items-center border border-brandBrownDark">
+                                <div>
+                                    <h4 class="text-white font-semibold">CHICKEN CURRY</h4>
+                                    <p class="text-xs text-gray-400 mt-1">Tender chicken pieces simmered in a rich, spiced curry sauce with onions, tomatoes, garlic, and fresh herbs. Served with rice or chapati.</p>
+                                </div>
+                                <span class="text-brandGold font-bold ml-4">$7</span>
+                            </div>
+                            <div class="bg-brandBrownPlain p-4 rounded-xl flex justify-between items-center border border-brandBrownDark">
+                                <div>
+                                    <h4 class="text-white font-semibold">FISH CURRY</h4>
+                                    <p class="text-xs text-gray-400 mt-1">Fresh fish fillets simmered in a spiced tomato-onion curry sauce with herbs and mild heat. Served with rice or chapati.</p>
+                                </div>
+                                <span class="text-brandGold font-bold ml-4">$7</span>
+                            </div>
+                            <div class="bg-brandBrownPlain p-4 rounded-xl flex justify-between items-center border border-brandBrownDark">
+                                <div>
+                                    <h4 class="text-white font-semibold">GOAT MEAT</h4>
+                                    <p class="text-xs text-gray-400 mt-1">Tender, flavorful goat meat cooked to perfection and served with rice or bread.</p>
+                                </div>
+                                <span class="text-brandGold font-bold ml-4">$8</span>
+                            </div>
+                            <div class="bg-brandBrownPlain p-4 rounded-xl flex justify-between items-center border border-brandBrownDark">
+                                <div>
+                                    <h4 class="text-white font-semibold">SOMALI GOAT HANID</h4>
+                                    <p class="text-xs text-gray-400 mt-1">Slow-cooked perfection — a proud Somali classic.</p>
+                                </div>
+                                <span class="text-brandGold font-bold ml-4">$10</span>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-1 flex flex-col gap-4">
+                            <img class="w-full h-56 object-cover rounded-xl shadow border border-brandBrownLight/20" src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=500&q=80" alt="Somali Goat Hanid Roasted">
+                            <img class="w-full h-56 object-cover rounded-xl shadow border border-brandOliveLight/20" src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=500&q=80" alt="Elite Grilled Meats Platter">
+                        </div>
+                    </div>
+                </div>
+
+                <div id="panel-pizza" class="menu-panel hidden space-y-6">
+                    <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+                        <div class="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                            <div class="bg-brandBrownPlain p-4 rounded-xl border border-brandBrownDark flex flex-col justify-between">
+                                <h4 class="text-white font-bold mb-2">Chicken Pizza</h4>
+                                <div class="flex justify-between text-xs mt-2 text-gray-300"><span>Small: <strong>$5</strong></span><span>Medium: <strong>$8</strong></span><span>Large: <strong>$10</strong></span></div>
+                            </div>
+                            <div class="bg-brandBrownPlain p-4 rounded-xl border border-brandBrownDark flex flex-col justify-between">
+                                <h4 class="text-white font-bold mb-2">Fish Pizza</h4>
+                                <div class="flex justify-between text-xs mt-2 text-gray-300"><span>Small: <strong>$5</strong></span><span>Medium: <strong>$8</strong></span><span>Large: <strong>$10</strong></span></div>
+                            </div>
+                            <div class="bg-brandBrownPlain p-4 rounded-xl border border-brandBrownDark flex flex-col justify-between">
+                                <h4 class="text-white font-bold mb-2">Tuna Pizza</h4>
+                                <div class="flex justify-between text-xs mt-2 text-gray-300"><span>Small: <strong>$5</strong></span><span>Medium: <strong>$8</strong></span><span>Large: <strong>$10</strong></span></div>
+                            </div>
+                            <div class="bg-brandBrownPlain p-4 rounded-xl border border-brandBrownDark flex flex-col justify-between">
+                                <h4 class="text-white font-bold mb-2">Meat Pizza</h4>
+                                <div class="flex justify-between text-xs mt-2 text-gray-300"><span>Small: <strong>$6</strong></span><span>Medium: <strong>$9</strong></span><span>Large: <strong>$12</strong></span></div>
+                            </div>
+                            <div class="bg-brandBrownPlain p-4 rounded-xl border border-brandBrownDark flex flex-col justify-between">
+                                <h4 class="text-white font-bold mb-2">Hawaiian Pizza</h4>
+                                <div class="flex justify-between text-xs mt-2 text-gray-300"><span>Small: <strong>$5</strong></span><span>Medium: <strong>$8</strong></span><span>Large: <strong>$10</strong></span></div>
+                            </div>
+                            <div class="bg-brandBrownPlain p-4 rounded-xl border border-brandBrownDark flex flex-col justify-between">
+                                <h4 class="text-white font-bold mb-2">Margherita Pizza</h4>
+                                <div class="flex justify-between text-xs mt-2 text-gray-300"><span>Small: <strong>$5</strong></span><span>Medium: <strong>$8</strong></span><span>Large: <strong>$10</strong></span></div>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-1">
+                            <img class="w-full h-full min-h-[220px] object-cover rounded-xl shadow border border-brandBrownLight/20" src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=500&q=80" alt="Freshly Baked House Pizza">
+                        </div>
+                    </div>
+                    <div class="bg-brandBrownPlain p-4 rounded-xl border-2 border-brandOliveLight flex justify-between items-center">
+                        <span class="text-white font-bold uppercase tracking-wider"><i class="fa-solid fa-star text-brandGold mr-2"></i>9one Pizza (Signature House Special)</span>
+                        <strong class="text-brandGold text-lg">$15</strong>
+                    </div>
+                </div>
+
+                <div id="panel-burgers" class="menu-panel hidden space-y-6">
+                    <div class="text-center text-xs text-brandGold tracking-wider uppercase bg-brandBrownPlain p-2 rounded-xl">
+                        * All our burgers come with French fries and a complimentary sauce. *
+                    </div>
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                        <div class="lg:col-span-2 space-y-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="space-y-3">
+                                    <h3 class="text-xs font-bold uppercase text-brandBrownLight tracking-widest border-b border-brandBrownLight/10 pb-1">Chicken Burgers</h3>
+                                    <div class="flex justify-between text-sm bg-brandBrownPlain p-3 rounded-lg border border-brandBrownDark"><span>BBQ Chicken Burger</span><strong>$6</strong></div>
+                                    <div class="flex justify-between text-sm bg-brandBrownPlain p-3 rounded-lg border border-brandBrownDark"><span>Stacker Burger</span><strong>$5</strong></div>
+                                    <div class="flex justify-between text-sm bg-brandBrownPlain p-3 rounded-lg border border-brandBrownDark"><span>Grilled Chicken Burger</span><strong>$4.5</strong></div>
+                                </div>
+                                <div class="space-y-3">
+                                    <h3 class="text-xs font-bold uppercase text-brandBrownLight tracking-widest border-b border-brandBrownLight/10 pb-1">Beef Burgers</h3>
+                                    <div class="flex justify-between text-sm bg-brandBrownPlain p-3 rounded-lg border border-brandBrownDark"><span>Double Smash Burger</span><strong>$7.5</strong></div>
+                                    <div class="flex justify-between text-sm bg-brandBrownPlain p-3 rounded-lg border border-brandBrownDark"><span>Smash Burger</span><strong>$5</strong></div>
+                                </div>
+                            </div>
+                            <div class="space-y-4">
+                                <h3 class="text-xs font-bold uppercase text-brandOliveLight tracking-widest border-b border-brandOliveLight/20 pb-1">Sandwiches and Wraps</h3>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div class="bg-brandBrownPlain p-4 rounded-xl flex justify-between items-start border border-brandBrownDark">
+                                        <div><h4 class="text-white font-semibold">9ONE SANDWICH</h4><p class="text-xs text-gray-400 mt-1">Classic toasted sandwich served with chicken, cheese, fried egg, tomato, and lettuce.</p></div>
+                                        <span class="text-brandGold font-bold ml-4">$6.5</span>
+                                    </div>
+                                    <div class="bg-brandBrownPlain p-4 rounded-xl flex justify-between items-start border border-brandBrownDark">
+                                        <div><h4 class="text-white font-semibold">FISH WRAP</h4><p class="text-xs text-gray-400 mt-1">Strips of fish fillet in lemon and garlic, fried with peppers and onions in a tortilla wrap. Served with chips on the side.</p></div>
+                                        <span class="text-brandGold font-bold ml-4">$6</span>
+                                    </div>
+                                    <div class="bg-brandBrownPlain p-4 rounded-xl flex justify-between items-start border border-brandBrownDark">
+                                        <div><h4 class="text-white font-semibold">CHICKEN WRAP</h4><p class="text-xs text-gray-400 mt-1">Well-marinated strips of chicken breast, cucumber pickles, and fries wrapped in a tortilla. Served with chips on the side.</p></div>
+                                        <span class="text-brandGold font-bold ml-4">$6</span>
+                                    </div>
+                                    <div class="bg-brandBrownPlain p-4 rounded-xl flex justify-between items-start border border-brandBrownDark">
+                                        <div><h4 class="text-white font-semibold">MEAT WRAP</h4><p class="text-xs text-gray-400 mt-1">Well-marinated strips of beef, cucumber pickles, and fries wrapped in a tortilla. Served with chips on the side.</p></div>
+                                        <span class="text-brandGold font-bold ml-4">$6</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-1 flex flex-col gap-4 justify-center">
+                            <img class="w-full h-56 object-cover rounded-xl shadow border border-brandOliveLight/20" src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=500&q=80" alt="Gourmet Smash Burger and Fries">
+                            <img class="w-full h-56 object-cover rounded-xl shadow border border-brandBrownLight/20" src="https://images.unsplash.com/photo-1626700051175-6518c4793f4f?auto=format&fit=crop&w=500&q=80" alt="Toasted Premium Wrap presentation">
+                        </div>
+                    </div>
+                </div>
+
+                <div id="panel-pasta" class="menu-panel hidden grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <div class="space-y-4 lg:col-span-1">
+                        <h3 class="text-sm font-bold uppercase text-brandBrownLight border-b border-brandBrownLight/10 pb-1 tracking-widest">Gourmet Pasta</h3>
+                        <div class="bg-brandBrownPlain p-4 rounded-xl flex justify-between items-start border border-brandBrownDark">
+                            <div><h4 class="text-white font-semibold">Spaghetti Matriciana</h4><p class="text-xs text-gray-400 mt-1">Spaghetti cooked in pomodoro sauce with beef strips.</p></div>
+                            <span class="text-brandGold font-bold ml-2">$6.5</span>
+                        </div>
+                        <div class="bg-brandBrownPlain p-4 rounded-xl flex justify-between items-start border border-brandBrownDark">
+                            <div><h4 class="text-white font-semibold">9ONE PASTA</h4><p class="text-xs text-gray-400 mt-1">Spicy fried tomato sauce with strips of chicken. Served with your choice of pasta (penne or spaghetti).</p></div>
+                            <span class="text-brandGold font-bold ml-2">$6</span>
+                        </div>
+                        <div class="bg-brandBrownPlain p-4 rounded-xl flex justify-between items-start border border-brandBrownDark">
+                            <div><h4 class="text-white font-semibold">PASTA ALFREDO</h4><p class="text-xs text-gray-400 mt-1">Creamy pasta with strips of chicken, green peas, mushrooms, and cream.</p></div>
+                            <span class="text-brandGold font-bold ml-2">$5.5</span>
+                        </div>
+                        <div class="bg-brandBrownPlain p-4 rounded-xl flex justify-between items-start border border-brandBrownDark">
+                            <div><h4 class="text-white font-semibold">PASTA BOLOGNESE</h4><p class="text-xs text-gray-400 mt-1">Fried minced beef in pomodoro sauce, well-seasoned and served with spaghetti.</p></div>
+                            <span class="text-brandGold font-bold ml-2">$5</span>
+                        </div>
+                    </div>
+                    <div class="space-y-4 lg:col-span-1">
+                        <h3 class="text-sm font-bold uppercase text-brandOliveLight border-b border-brandOliveLight/20 pb-1 tracking-widest">Fresh Salads</h3>
+                        <div class="bg-brandBrownPlain p-4 rounded-xl flex justify-between items-start border border-brandBrownDark">
+                            <div><h4 class="text-white font-semibold">FISH SALAD</h4><p class="text-xs text-gray-400 mt-1">Grilled fish served over fresh greens, cucumber, tomatoes, and lemon dressing.</p></div>
+                            <span class="text-brandGold font-bold ml-2">$4</span>
+                        </div>
+                        <div class="bg-brandBrownPlain p-4 rounded-xl flex justify-between items-start border border-brandBrownDark">
+                            <div><h4 class="text-white font-semibold">CHICKEN BREAST SALAD</h4><p class="text-xs text-gray-400 mt-1">Sliced grilled chicken on a bed of lettuce, tomato, cucumber, and sweet corn.</p></div>
+                            <span class="text-brandGold font-bold ml-2">$4</span>
+                        </div>
+                        <div class="bg-brandBrownPlain p-4 rounded-xl flex justify-between items-start border border-brandBrownDark">
+                            <div><h4 class="text-white font-semibold">TUNA LIGHT SALAD</h4><p class="text-xs text-gray-400 mt-1">Tuna, sweet corn, tomato, green pepper, and black olives. Dressing: lemon-mustard.</p></div>
+                            <span class="text-brandGold font-bold ml-2">$3.5</span>
+                        </div>
+                        <div class="bg-brandBrownPlain p-4 rounded-xl flex justify-between items-start border border-brandBrownDark">
+                            <div><h4 class="text-white font-semibold">GREEN GARDEN SALAD</h4><p class="text-xs text-gray-400 mt-1">Lettuce, spinach, cucumber, tomato, onion, and fresh parsley. Dressing: lemon & olive oil or balsamic.</p></div>
+                            <span class="text-brandGold font-bold ml-2">$3</span>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-1 flex flex-col gap-4 self-center">
+                        <img class="w-full h-44 object-cover rounded-xl border border-brandBrownLight/20 shadow" src="https://images.unsplash.com/photo-1645112411341-6c4fd023714a?auto=format&fit=crop&w=500&q=80" alt="Gourmet Pasta Alfredo Plate">
+                        <img class="w-full h-44 object-cover rounded-xl border border-brandOliveLight/20 shadow" src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=500&q=80" alt="Fresh Green Garden Salad">
+                    </div>
+                </div>
+
+                <div id="panel-tea" class="menu-panel hidden space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div class="space-y-2 bg-brandBrownPlain p-4 rounded-xl border border-brandBrownDark">
+                            <h4 class="text-xs font-bold text-brandOliveLight border-b border-brandOliveLight/20 pb-1 uppercase tracking-wider">Hot Tea</h4>
+                            <div class="flex justify-between text-xs py-1"><span>Somali Tea</span><strong>$1</strong></div>
+                            <div class="flex justify-between text-xs py-1"><span>Camel Tea</span><strong>$1.5</strong></div>
+                            <div class="flex justify-between text-xs py-1"><span>Karak Tea</span><strong>$1.5</strong></div>
+                            <div class="flex justify-between text-xs py-1"><span>Masala Tea</span><strong>$1</strong></div>
+                            <div class="flex justify-between text-xs py-1"><span>Spanish Tea</span><strong>$1.5</strong></div>
+                            <div class="flex justify-between text-xs py-1"><span>Fresh 91 Tea</span><strong>$1</strong></div>
+                            <div class="flex justify-between text-xs py-1"><span>Matcha Latte</span><strong>$2</strong></div>
+                            <div class="flex justify-between text-xs py-1"><span>Dawa Tea</span><strong>$1.5</strong></div>
+                            <div class="flex justify-between text-xs py-1"><span>Hibiscus Tea</span><strong>$1.5</strong></div>
+                            <div class="flex justify-between text-xs py-1"><span>Ginger Tea</span><strong>$1</strong></div>
+                        </div>
+                        <div class="space-y-2 bg-brandBrownPlain p-4 rounded-xl border border-brandBrownDark">
+                            <h4 class="text-xs font-bold text-brandOliveLight border-b border-brandOliveLight/20 pb-1 uppercase tracking-wider">Iced Tea</h4>
+                            <div class="flex justify-between text-xs py-1"><span>Raspberry ice tea</span><strong>$2.5</strong></div>
+                            <div class="flex justify-between text-xs py-1"><span>Peach ice tea</span><strong>$2.5</strong></div>
+                            <div class="flex justify-between text-xs py-1"><span>Blueberry ice tea</span><strong>$2.5</strong></div>
+                            <div class="flex justify-between text-xs py-1"><span>Strawberry ice tea</span><strong>$2.5</strong></div>
+                            <div class="flex justify-between text-xs py-1"><span>Lemonade ice tea</span><strong>$3</strong></div>
+                        </div>
+                        <div class="space-y-2 bg-brandBrownPlain p-4 rounded-xl border border-brandBrownDark">
+                            <h4 class="text-xs font-bold text-brandOliveLight border-b border-brandOliveLight/20 pb-1 uppercase tracking-wider">Hibiscus Blends</h4>
+                            <div class="flex justify-between text-xs py-1"><span>Iced strawberry hibiscus</span><strong>$3</strong></div>
+                            <div class="flex justify-between text-xs py-1"><span>Iced passion fruit hibiscus</span><strong>$3</strong></div>
+                            <div class="flex justify-between text-xs py-1"><span>Iced blueberry hibiscus</span><strong>$3</strong></div>
+                            <div class="flex justify-between text-xs py-1"><span>Ice Berry Hibiscus</span><strong>$2.5</strong></div>
+                        </div>
+                        <div class="space-y-2 bg-brandBrownPlain p-4 rounded-xl border border-brandBrownDark">
+                            <h4 class="text-xs font-bold text-brandBrownLight border-b border-brandBrownLight/20 pb-1 uppercase tracking-wider">Cakes & Croissant</h4>
+                            <div class="flex justify-between text-xs py-1"><span>Basbusa</span><strong>$3</strong></div>
+                            <div class="flex justify-between text-xs py-1"><span>Brownies</span><strong>$3</strong></div>
+                            <div class="flex justify-between text-xs py-1"><span>Coconut Cake</span><strong>$3</strong></div>
+                            <div class="flex justify-between text-xs py-1"><span>Date Cake</span><strong>$2.5</strong></div>
+                            <div class="flex justify-between text-xs py-1"><span>Croissant</span><strong>$1.2</strong></div>
+                            <div class="flex justify-between text-xs py-1"><span>Almond Croissant</span><strong>$2</strong></div>
+                            <div class="flex justify-between text-xs py-1"><span>Cookies</span><strong>$1.6</strong></div>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+                        <img class="w-full h-36 object-cover rounded-xl border border-brandBrownLight/10" src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=400&q=80" alt="Authentic Traditional Somali Tea Cup">
+                        <img class="w-full h-36 object-cover rounded-xl border border-brandBrownLight/10" src="https://images.unsplash.com/photo-1497515114629-f71d768fd07c?auto=format&fit=crop&w=400&q=80" alt="Refreshing Iced Fruit Tea glass">
+                        <img class="w-full h-36 object-cover rounded-xl border border-brandBrownLight/10" src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=400&q=80" alt="Premium Chocolate Brownie slice">
+                        <img class="w-full h-36 object-cover rounded-xl border border-brandBrownLight/10" src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=400&q=80" alt="Fresh Bakery Croissants baked">
+                    </div>
+                </div>
+
+                <div id="panel-coffee" class="menu-panel hidden grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <div class="space-y-2 bg-brandBrownPlain p-5 rounded-xl border border-brandBrownDark lg:col-span-1">
+                        <h4 class="text-xs font-bold uppercase tracking-wider text-brandBrownLight border-b border-brandBrownLight/20 pb-2 mb-2">Hot Coffee Bar</h4>
+                        <div class="flex justify-between text-xs py-1"><span>Espresso</span><strong>$1.5</strong></div>
+                        <div class="flex justify-between text-xs py-1"><span>Espresso Macchiato</span><strong>$1.5</strong></div>
+                        <div class="flex justify-between text-xs py-1"><span>Cortado</span><strong>$1.5</strong></div>
+                        <div class="flex justify-between text-xs py-1"><span>Cappuccino</span><strong>$2</strong></div>
+                        <div class="flex justify-between text-xs py-1"><span>Latte</span><strong>$2</strong></div>
+                        <div class="flex justify-between text-xs py-1"><span>Americano</span><strong>$1.5</strong></div>
+                        <div class="flex justify-between text-xs py-1"><span>Flat White</span><strong>$2</strong></div>
+                        <div class="flex justify-between text-xs py-1"><span>Doppio</span><strong>$1</strong></div>
+                        <div class="flex justify-between text-xs py-1"><span>Lungo</span><strong>$1</strong></div>
+                        <div class="flex justify-between text-xs py-1"><span>Vanilla Latte</span><strong>$2.5</strong></div>
+                        <div class="flex justify-between text-xs py-1"><span>Caramel Latte</span><strong>$2.5</strong></div>
+                        <div class="flex justify-between text-xs py-1"><span>White Mocha Latte</span><strong>$2.5</strong></div>
+                        <div class="flex justify-between text-xs py-1"><span>Mocha Latte</span><strong>$2.5</strong></div>
+                        <div class="flex justify-between text-xs py-1"><span>Spanish Late</span><strong>$2.5</strong></div>
+                        <div class="flex justify-between text-xs py-1"><span>Salted Caramel Latte</span><strong>$2.5</strong></div>
+                        <div class="flex justify-between text-xs py-1"><span>Chai Tea Latte</span><strong>$2.5</strong></div>
+                        <div class="flex justify-between text-xs py-1"><span>V60</span><strong>$2.5</strong></div>
+                        <div class="flex justify-between text-xs py-1"><span>Affogato</span><strong>$2</strong></div>
+                        <div class="flex justify-between text-xs py-1"><span>Coconut latte</span><strong>$2.5</strong></div>
+                    </div>
+                    <div class="space-y-2 bg-brandBrownPlain p-5 rounded-xl border border-brandBrownDark h-fit lg:col-span-1">
+                        <h4 class="text-xs font-bold uppercase tracking-wider text-brandBrownLight border-b border-brandBrownLight/20 pb-2 mb-2">Iced Coffee Blends</h4>
+                        <div class="flex justify-between text-xs py-1"><span>Iced Caramel Latte</span><strong>$2.5</strong></div>
+                        <div class="flex justify-between text-xs py-1"><span>Iced Vanilla Latte</span><strong>$2.5</strong></div>
+                        <div class="flex justify-between text-xs py-1"><span>Classic Iced Latte</span><strong>$2.5</strong></div>
+                        <div class="flex justify-between text-xs py-1"><span>Iced Spanish Latte</span><strong>$2.5</strong></div>
+                        <div class="flex justify-between text-xs py-1"><span>Iced Mocha</span><strong>$2.5</strong></div>
+                        <div class="flex justify-between text-xs py-1"><span>Iced Coconut Latte</span><strong>$2.5</strong></div>
+                        <div class="flex justify-between text-xs py-1"><span>Iced White Mocha</span><strong>$2.5</strong></div>
+                        <div class="flex justify-between text-xs py-1"><span>Iced Chai Tea Latte</span><strong>$2.5</strong></div>
+                        <div class="flex justify-between text-xs py-1"><span>Iced Americano</span><strong>$2</strong></div>
+                        <div class="flex justify-between text-xs py-1"><span>Iced V60</span><strong>$3</strong></div>
+                    </div>
+                    <div class="lg:col-span-1 flex flex-col gap-4 self-start">
+                        <img class="w-full h-52 object-cover rounded-xl border border-brandBrownLight/20 shadow" src="https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=500&q=80" alt="Beautiful Cappuccino Art">
+                        <img class="w-full h-52 object-cover rounded-xl border border-brandOliveLight/20 shadow" src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=500&q=80" alt="Premium Iced Caramel Macchiato">
+                    </div>
+                </div>
+
+                <div id="panel-matcha" class="menu-panel hidden space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="space-y-2 bg-brandBrownPlain p-4 rounded-xl border-t-4 border-brandOliveLight border-x border-b border-brandBrownDark">
+                            <h4 class="text-xs font-bold uppercase tracking-wider text-brandOliveLight pb-2">Matcha Corner</h4>
+                            <div class="flex justify-between text-xs py-1"><span>Matcha Frappe</span><strong>$3</strong></div>
+                            <div class="flex justify-between text-xs py-1"><span>Strawberry Matcha Latte</span><strong>$3</strong></div>
+                            <div class="flex justify-between text-xs py-1"><span>Mango Matcha Latte</span><strong>$3</strong></div>
+                            <div class="flex justify-between text-xs py-1"><span>Dirty Matcha Latte</span><strong>$2.5</strong></div>
+                            <div class="flex justify-between text-xs py-1"><span>Iced Spanish Matcha</span><strong>$2.5</strong></div>
+                            <div class="flex justify-between text-xs py-1"><span>Iced Vanilla Matcha</span><strong>$2.5</strong></div>
+                            <div class="flex justify-between text-xs py-1"><span>Iced Caramel Matcha</span><strong>$2.5</strong></div>
+                            <div class="flex justify-between text-xs py-1"><span>Iced White Chocolate Matcha</span><strong>$2.5</strong></div>
+                        </div>
+                        <div class="space-y-2 bg-brandBrownPlain p-4 rounded-xl border-t-4 border-brandBrownLight border-x border-b border-brandBrownDark">
+                            <h4 class="text-xs font-bold uppercase tracking-wider text-brandBrownLight pb-2">Smoothies</h4>
+                            <div class="flex justify-between text-xs py-1"><span>Strawberry Smoothie</span><strong>$3.5</strong></div>
+                            <div class="flex justify-between text-xs py-1"><span>Mango Smoothie</span><strong>$3.5</strong></div>
+                            <div class="flex justify-between text-xs py-1"><span>Banana Smoothie</span><strong>$3.5</strong></div>
+                        </div>
+                        <div class="space-y-2 bg-brandBrownPlain p-4 rounded-xl border-t-4 border-brandOliveLight border-x border-b border-brandBrownDark">
+                            <h4 class="text-xs font-bold uppercase tracking-wider text-brandOliveLight pb-2">Milkshakes</h4>
+                            <div class="flex justify-between text-xs py-1"><span>Strawberry milkshake</span><strong>$3</strong></div>
+                            <div class="flex justify-between text-xs py-1"><span>Lotus milkshake</span><strong>$3</strong></div>
+                            <div class="flex justify-between text-xs py-1"><span>Oreo milkshake</span><strong>$3</strong></div>
+                            <div class="flex justify-between text-xs py-1"><span>Coffee milkshake</span><strong>$3</strong></div>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <img class="w-full h-40 object-cover rounded-xl border border-brandBrownLight/10" src="https://images.unsplash.com/photo-1536256263959-770b48d82b0a?auto=format&fit=crop&w=400&q=80" alt="Iced Premium Matcha Latte drink">
+                        <img class="w-full h-40 object-cover rounded-xl border border-brandBrownLight/10" src="https://images.unsplash.com/photo-1553530666-ba11a7da3888?auto=format&fit=crop&w=400&q=80" alt="Fresh Organic Mango Smoothie">
+                        <img class="w-full h-40 object-cover rounded-xl border border-brandBrownLight/10" src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=400&q=80" alt="Signature Strawberry Milkshake topped with cream">
+                    </div>
+                </div>
+
+                <div id="panel-sides" class="menu-panel hidden grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <div class="space-y-3 lg:col-span-1">
+                        <h3 class="text-xs font-bold text-brandBrownLight tracking-widest uppercase border-b border-brandBrownLight/10 pb-1">Side Sauces & Dressings</h3>
+                        <div class="flex justify-between text-sm bg-brandBrownPlain p-3 rounded-lg border border-brandBrownDark"><span>Chips Masala</span><strong>$5</strong></div>
+                        <div class="flex justify-between text-sm bg-brandBrownPlain p-3 rounded-lg border border-brandBrownDark"><span>Cheesy Fries</span><strong>$4</strong></div>
+                        <div class="flex justify-between text-sm bg-brandBrownPlain p-3 rounded-lg border border-brandBrownDark"><span>French Fries</span><strong>$3</strong></div>
+                        <div class="flex justify-between text-sm bg-brandBrownPlain p-3 rounded-lg border border-brandBrownDark"><span>Mayonnaise</span><strong>$0.5</strong></div>
+                        <div class="flex justify-between text-sm bg-brandBrownPlain p-3 rounded-lg border border-brandBrownDark"><span>Attack Sauce</span><strong>$0.5</strong></div>
+                        <div class="flex justify-between text-sm bg-brandBrownPlain p-3 rounded-lg border border-brandBrownDark"><span>Chilli Sauce</span><strong>$0.5</strong></div>
+                        <div class="flex justify-between text-sm bg-brandBrownPlain p-3 rounded-lg border border-brandBrownDark"><span>BBQ Sauce</span><strong>$0.5</strong></div>
+                    </div>
+                    <div class="space-y-4 lg:col-span-1">
+                        <h3 class="text-xs font-bold text-brandOliveLight tracking-widest uppercase border-b border-brandOliveLight/20 pb-1">Warm Soups</h3>
+                        <div class="bg-brandBrownPlain p-4 rounded-xl flex justify-between items-start border border-brandBrownDark">
+                            <div><h4 class="text-white font-semibold">CHICKEN SOUP</h4><p class="text-xs text-gray-400 mt-1">Shredded chicken in a light broth with vegetables. Served with bread or salad.</p></div>
+                            <span class="text-brandGold font-bold ml-2">$3.5</span>
+                        </div>
+                        <div class="bg-brandBrownPlain p-4 rounded-xl flex justify-between items-start border border-brandBrownDark">
+                            <div><h4 class="text-white font-semibold">FISH SOUP</h4><p class="text-xs text-gray-400 mt-1">Fresh fish fillet in a mildly spiced broth with potatoes and herbs. Served with chapati.</p></div>
+                            <span class="text-brandGold font-bold ml-2">$3.5</span>
+                        </div>
+                        <div class="bg-brandBrownPlain p-4 rounded-xl flex justify-between items-start border border-brandBrownDark">
+                            <div><h4 class="text-white font-semibold">CREAMY VEGETABLE SOUP</h4><p class="text-xs text-gray-400 mt-1">Blended fresh vegetables with herbs and light cream. Served with bread or chapati.</p></div>
+                            <span class="text-brandGold font-bold ml-2">$3</span>
+                        </div>
+                        <div class="bg-brandBrownPlain p-4 rounded-xl flex justify-between items-start border border-brandBrownDark">
+                            <div><h4 class="text-white font-semibold">TOMATO BASIL SOUP</h4><p class="text-xs text-gray-400 mt-1">Fresh tomatoes simmered with basil and garlic. Served with toasted bread.</p></div>
+                            <span class="text-brandGold font-bold ml-2">$3</span>
+                        </div>
+                        <div class="bg-brandBrownPlain p-4 rounded-xl flex justify-between items-start border border-brandBrownDark">
+                            <div><h4 class="text-white font-semibold">LENTIL SOUP</h4><p class="text-xs text-gray-400 mt-1">Slow-cooked lentils with carrots, onions, and Somali spices. Served with chapati.</p></div>
+                            <span class="text-brandGold font-bold ml-2">$3</span>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-1 grid grid-cols-1 gap-4 self-start">
+                        <img class="w-full h-44 object-cover rounded-xl border border-brandBrownLight/20 shadow" src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=500&q=80" alt="Crispy French Fries Bowl">
+                        <img class="w-full h-44 object-cover rounded-xl border border-brandOliveLight/20 shadow" src="https://images.unsplash.com/photo-1547592165-e1d17fed6005?auto=format&fit=crop&w=500&q=80" alt="Warm Creamy Vegetable Soup bowl">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 bg-brandBrownDark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div class="space-y-8">
+                    <div>
+                        <span class="text-brandBrownLight uppercase tracking-wider font-semibold text-sm block mb-2">Get In Touch</span>
+                        <h2 class="text-4xl font-bold text-white">We'd Love to Welcome You</h2>
+                        <p class="text-gray-400 mt-4 text-sm max-w-md">Our dining spaces are ready to serve you. Reach us through our details below.</p>
+                    </div>
+                    <div class="space-y-4 text-sm">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-10 h-10 bg-brandBrownPlain flex items-center justify-center rounded-full text-brandBrownLight"><i class="fa-solid fa-phone"></i></div>
+                            <div><p class="text-gray-400 text-xs">Call Us Directly</p><p class="text-white font-semibold">+252 63 4700000</p></div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-10 h-10 bg-brandBrownPlain flex items-center justify-center rounded-full text-brandOliveLight"><i class="fa-solid fa-location-dot"></i></div>
+                            <div><p class="text-gray-400 text-xs">Location</p><p class="text-white font-semibold">Main Road, Hargeisa, Somaliland</p></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-brandBrownPlain p-8 rounded-2xl border border-brandOliveLight/20 shadow-2xl">
+                    <h3 class="text-xl font-bold text-white mb-6">Send an Inquiry</h3>
+                    <form onsubmit="event.preventDefault(); alert('Message submitted successfully!'); this.reset();" class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-semibold uppercase text-gray-300 mb-2">Full Name</label>
+                            <input type="text" required class="w-full bg-brandBrownDark border border-brandOliveLight/20 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-brandBrownLight transition" placeholder="Your Name">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold uppercase text-gray-300 mb-2">Phone Number</label>
+                            <input type="tel" required class="w-full bg-brandBrownDark border border-brandOliveLight/20 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-brandBrownLight transition" placeholder="63 XXXXXXX">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold uppercase text-gray-300 mb-2">Message</label>
+                            <textarea rows="3" required class="w-full bg-brandBrownDark border border-brandOliveLight/20 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-brandBrownLight transition" placeholder="Write your inquiry here..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-brandOliveLight hover:bg-brandOliveLight/90 text-white py-3 rounded-lg font-bold tracking-wider text-sm transition duration-300 shadow-lg">Submit Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-brandBrownDark border-t border-brandOliveLight/10 py-8 text-center text-xs text-gray-500">
+        <p>&copy; 2026 Yase Restaurant. All Rights Reserved. Digital Presentation Layout.</p>
+    </footer>
+
+    <script>
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        // Toggle mobile dropdown
+        mobileMenuBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close dropdown when picking links
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Close dropdown when clicking workspace body spaces
+        document.addEventListener('click', (e) => {
+            if (!mobileMenu.classList.contains('hidden') && !mobileMenu.contains(e.target) && e.target !== mobileMenuBtn) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+
+        // Smooth Display Tab Switcher Engine
+        function switchTab(tabId) {
+            const panels = document.querySelectorAll('.menu-panel');
+            panels.forEach(panel => panel.classList.add('hidden'));
+
+            document.getElementById(`panel-${tabId}`).classList.remove('hidden');
+
+            const buttons = document.querySelectorAll('.menu-tab-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            
+            event.currentTarget.classList.add('active');
+        }
+    </script>
+</body>
+</html>
